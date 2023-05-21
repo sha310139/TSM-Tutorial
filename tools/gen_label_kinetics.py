@@ -35,7 +35,7 @@ if __name__ == '__main__':
         for line in lines:
             line = line.rstrip()
             items = line.split(',')
-            folders.append(items[1] + '_' + items[2])
+            folders.append(items[1] + '_' + "%06d" % int(items[2]) + '_' + "%06d" % int(items[3]))
             this_catergory = items[0].replace(' ', '_').replace('"', '').replace('(', '').replace(')', '').replace("'", '')
             categories_list.append(this_catergory)
             idx_categories.append(dict_categories[this_catergory])
