@@ -28,7 +28,8 @@ def main():
     global args, best_prec1
     args = parser.parse_args()
 
-    num_class, args.train_list, args.val_list, args.root_path, prefix = dataset_config.return_dataset(args.dataset,
+    num_class, args.train_list, args.val_list, args.root_path, prefix = dataset_config.return_dataset(args.root_path,
+                                                                                                      args.dataset,
                                                                                                       args.modality)
     full_arch_name = args.arch
     if args.shift:

@@ -6,16 +6,17 @@
 # Code adapted from https://github.com/metalbubble/TRN-pytorch/blob/master/process_dataset.py
 
 import os
+import sys
 
-
-dataset_path = '/ssd/video/kinetics/images256/'
-label_path = '/ssd/video/kinetics/labels'
 
 if __name__ == '__main__':
-    with open('kinetics_label_map.txt') as f:
+    dataset_path = sys.argv[1]
+    label_path = sys.argv[2]
+
+    with open(os.path.join(label_path, 'kinetics_sub_label_map.txt')) as f:
         categories = f.readlines()
         categories = [c.strip().replace(' ', '_').replace('"', '').replace('(', '').replace(')', '').replace("'", '') for c in categories]
-    assert len(set(categories)) == 400
+    assert len(set(categories)) == 20
     dict_categories = {}
     for i, category in enumerate(categories):
         dict_categories[category] = i

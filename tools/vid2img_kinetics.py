@@ -10,7 +10,7 @@ import subprocess
 from multiprocessing import Pool
 from tqdm import tqdm
 
-n_thread = 100
+n_thread = 1
 
 
 def vid2jpg(file_name, class_path, dst_class_path):
@@ -74,5 +74,5 @@ if __name__ == "__main__":
     for class_name in class_list:
         class_process(dir_path, dst_dir_path, class_name)
 
-    class_name = 'test'
-    class_process(dir_path, dst_dir_path, class_name)
+    #class_name = 'test'
+    #class_process(dir_path, dst_dir_path, class_name)
